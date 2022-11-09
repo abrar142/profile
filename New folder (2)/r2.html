@@ -1,0 +1,120 @@
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-world, initial-Scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <link
+  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
+</head>
+<body>
+
+   <div class="container">
+   <div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide"><img src="alex.jpg"></div>
+    <div class="swiper-slide"><img src="biker1 - Copy.jpg"></div>
+    <div class="swiper-slide"><img src="Tiger.jpg"></div>
+    ...
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+ 
+</div>
+   </div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script>
+    const swiper = new Swiper('.swiper', {
+  
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+	
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  
+});
+
+</script>
+
+<h2 style="text-align:center; text-transform:uppercase; color:green;">Table List</h2>
+
+<input type="text" name="" id="myInput" placeholder="Name....">
+
+<table>
+   <tr class="h">
+      <th style="width:700px; background:gray">Name</th>
+	  <th style="width:700px; background:gray">Degree</th>
+   </tr>
+   <tr>
+      <td>Abrar</td>
+	  <td>BScIT</td>
+   </tr>
+   <tr>
+      <td>Vijay</td>
+	  <td>MScIT</td>
+   </tr>
+   <tr>
+      <td>Sandesh</td>
+	  <td>Diploma Civil</td>
+   </tr>
+   <tr>
+      <td>Vaishnav</td>
+	  <td>Bcom</td>
+   </tr>
+   <tr>
+      <td>Tanmay</td>
+	  <td>Btech</td>
+   </tr>
+   <tr>
+      <td>Akash</td>
+	  <td>Mca</td>
+   </tr>
+   <tr>
+      <td>Sahil</td>
+	  <td>Degree</td>
+   </tr>
+</table>
+ 
+<script>
+  const searchFun = () =>{
+     let filter=document.getElementById('myInput').value.toUpperCase();
+	 let myTable=document.getElementById('myTable');
+	 let tr=myTable.getElementByTagName('tr');
+	 for(var i=0; i<tr.length; i++){
+	   let td=tr[i].getElementByTagName('td')[0];
+	   
+	   if(td){
+	     let textvalue=td.textContent||td.innerHTML;
+		 
+		 if(textvalue.toUpperCase().indexOf(filter)>-1){
+		     tr[i].style.display="";
+			 
+		 }else{
+		     tr[i].style.display="none";
+		 }
+	   }
+	 }
+  }
+</script> 
+ 
+</body>
+</html>
